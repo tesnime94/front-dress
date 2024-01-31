@@ -1,0 +1,19 @@
+.form_connexion {
+    background-color: #fff;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 360px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 185px;
+    margin-left: 400px;
+}
+
+.groupLogin {
+    margin-bottom: 15px;
+
+}

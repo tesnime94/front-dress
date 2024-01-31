@@ -1,0 +1,60 @@
+header {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    top: 0;
+    background-color: #dba0b2;
+    position: fixed;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+nav .logo {
+    width: 170px;
+
+}
+
+nav ul {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: pink;
+    font-size: 1.2rem;
+    transition: color .3s;
+}
+
+nav ul li a:hover {
+    color: #63340b;
+}
+
+
+
+.boutonHeader {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border: 1px solid #863f0c;
+    color: #863f0c;
+    padding: 10px 20px;
+    margin-left: auto;
+    background-color: white;
+}
+
+.boutonAccueil {
+    padding-left: 550px;
+}
