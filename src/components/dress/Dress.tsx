@@ -9,7 +9,7 @@ const AllDressesPage = () => {
     useEffect(() => {
         const fetchDresses = async () => {
             try {
-                const response = await fetch('http://votre-api.com/dresses');
+                const response = await fetch('http://localhost:8080/robe/all');
                 const data = await response.json();
                 setDresses(data);
             } catch (error) {

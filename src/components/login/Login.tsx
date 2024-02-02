@@ -52,7 +52,7 @@ const Login = () => {
     return (
         <>
             <div className='form_connexion'>
-                <form onClick={onSubmit}>
+                <form onSubmit={onSubmit}>
                     <div className='groupLogin'>
                         <label htmlFor='email'> Email </label>
                         <input type='text' name='email' value={credentials.email} onChange={onChange} />
