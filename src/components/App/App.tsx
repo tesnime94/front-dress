@@ -6,6 +6,7 @@ import Accueil from '../home/Accueil'
 import Inscription from '../inscription/Inscription'
 import Header from '../header/header'
 import Dress from '../dress/Dress'
+import User from '../user/user'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Accueil />} />
           <Route path='/inscription' element={<Inscription />} />
           <Route path='/dress' element={<Dress />} />
+          <Route path='/user' element={<User />} />
         </Routes>
       </BrowserRouter>
     </div>

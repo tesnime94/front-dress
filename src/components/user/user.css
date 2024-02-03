@@ -1,0 +1,22 @@
+.texte {
+    padding: 70px 0;
+    
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.texte h1 {
+    color: pink;
+    font-size: 75px;
+    line-height: 2;
+    
+}
+
+.texte h4 {
+    
+    font-size: 30px;
+    line-height: 2;
+    margin-bottom: 1rem;
+}
