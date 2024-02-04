@@ -7,16 +7,21 @@
 }
 
 
-.texte h1 {
+ h2 {
     color: pink;
     font-size: 75px;
     line-height: 2;
     
 }
 
-.texte h4 {
+ p{
     
-    font-size: 30px;
+    font-size: 20px;
     line-height: 2;
     margin-bottom: 1rem;
+}
+strong{
+    color: pink;
+
+    font-weight: bold;
 }
