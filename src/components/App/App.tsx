@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from '../login/Login';
-import Accueil from '../home/Accueil';
-import Inscription from '../inscription/Inscription';
-import Header from '../header/header';
-import Dress from '../dress/Dress';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from '../login/Login'
+import Accueil from '../home/Accueil'
+import Inscription from '../inscription/Inscription'
+import Header from '../header/header'
+import Dress from '../dress/Dress'
+import User from '../user/user'
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Accueil />} />
           <Route path='/inscription' element={<Inscription />} />
           <Route path='/dress' element={<Dress />} />
+          <Route path='/user' element={<User />} />
         </Routes>
       </BrowserRouter>
     </div>

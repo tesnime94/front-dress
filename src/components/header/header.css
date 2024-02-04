@@ -39,21 +39,37 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #63340b;
+    color: #ca58a1;
 }
 
 
+button:hover{
+    color: #ca58a1;
+    border: #dba0b2;
+}
 
+button:active{
+    color: #ca58a1;
+    border-color: #dba0b2;
+    
+} 
 .boutonHeader {
     display: inline-block;
     text-decoration: none;
     font-size: 1.25rem;
-    border: 1px solid #863f0c;
-    color: #863f0c;
+    font-family: Arial;
+    font-weight: ;
+    color: #fff;
     padding: 10px 20px;
     margin-left: auto;
-    background-color: white;
+    background-color: #dba0b2;
+
 }
+.boutonAccueil li:not(:last-child)::after {
+    content: '|';
+    margin: 0 10px; /* Ajustez la marge entre le séparateur et le texte si nécessaire */
+    color:#fff
+  }
 
 .boutonAccueil {
     padding-left: 550px;

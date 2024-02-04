@@ -12,8 +12,8 @@ const Login = () => {
     })
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({
-        email: 'tesnime.benomrane@gmail.com',
-        password: 'ben'
+        email: '',
+        password: ''
     })
 
     // @ts-ignore afin de ne pas être obligé de spécifier le type

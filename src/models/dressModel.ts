@@ -5,4 +5,5 @@ export interface DressModel {
     description: string;
     price: number;
     size: string;
+    image: string;
 }
