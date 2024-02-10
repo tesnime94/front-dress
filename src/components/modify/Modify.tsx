@@ -3,10 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './modify.css';
 
+// Interface décrivant la structure de newUserInfo
+interface UserInfo {
+  name?: string;
+  email?: string;
+  address?: string;
+  phoneNumber?: string;
+  password?: string;
+}
+
 const Modify = () => {
   const navigate = useNavigate();
 
-  const [newUserInfo, setNewUserInfo] = useState({ name: '', email: '', address: '', phoneNumber: '', password: '' });
+  // Utilisation de l'interface UserInfo pour typage de newUserInfo
+  const [newUserInfo, setNewUserInfo] = useState<UserInfo>({});
 
   useEffect(() => {
     const userId = localStorage.getItem("userId")?.toString();
@@ -17,7 +27,7 @@ const Modify = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewUserInfo((prevUserInfo) => ({
       ...prevUserInfo,
@@ -27,29 +37,30 @@ const Modify = () => {
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    const userId = localStorage.getItem("userId")?.toString();
-    const updatedUserInfo: { [key: string]: string } = {};
-
-for (const key in newUserInfo) {
-  if (Object.prototype.hasOwnProperty.call(newUserInfo, key)) {
-    if (newUserInfo[key as keyof typeof newUserInfo] !== "") {
-      updatedUserInfo[key] = newUserInfo[key as keyof typeof newUserInfo];
-    }
-  }
-}
-
-
-    if (Object.keys(updatedUserInfo).length === 0) {
+    const userId = localStorage.getItem("userId");
+  
+    fetch(`http://localhost:8080/user/update/${userId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUserInfo),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erreur lors de la mise à jour de l\'utilisateur');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Utilisateur mis à jour avec succès', data);
       navigate('/user');
-      return;
-    }
-
-    axios.put(`http://localhost:8080/user/${userId}`, updatedUserInfo)
-      .then(() => {
-        navigate('/user');
-      })
-      .catch((error) => console.log(error));
+    })
+    .catch(error => {
+      console.error('Erreur lors de la mise à jour de l\'utilisateur', error);
+    });
   };
+  
 
   return (
     <div className='modify-container'>
@@ -61,7 +72,7 @@ for (const key in newUserInfo) {
             type="text"
             id="name"
             name="name"
-            value={newUserInfo.name}
+            value={newUserInfo.name || ''}
             onChange={handleChange}
           />
         </div>
@@ -71,7 +82,7 @@ for (const key in newUserInfo) {
             type="email"
             id="email"
             name="email"
-            value={newUserInfo.email}
+            value={newUserInfo.email || ''}
             onChange={handleChange}
           />
         </div>
@@ -81,7 +92,7 @@ for (const key in newUserInfo) {
             type="text"
             id="address"
             name="address"
-            value={newUserInfo.address}
+            value={newUserInfo.address || ''}
             onChange={handleChange}
           />
         </div>
@@ -91,7 +102,7 @@ for (const key in newUserInfo) {
             type="text"
             id="phoneNumber"
             name="phoneNumber"
-            value={newUserInfo.phoneNumber}
+            value={newUserInfo.phoneNumber || ''}
             onChange={handleChange}
           />
         </div>
@@ -101,7 +112,7 @@ for (const key in newUserInfo) {
             type="password"
             id="password"
             name="password"
-            value={newUserInfo.password}
+            value={newUserInfo.password || ''}
             onChange={handleChange}
           />
         </div>
