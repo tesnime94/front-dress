@@ -7,6 +7,7 @@ import Inscription from '../inscription/Inscription'
 import Header from '../header/header'
 import Dress from '../dress/Dress'
 import User from '../user/user'
+import Modify from '../modify/Modify'
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/inscription' element={<Inscription />} />
           <Route path='/dress' element={<Dress />} />
           <Route path='/user' element={<User />} />
+          <Route path='/modify' element={<Modify />} />
         </Routes>
       </BrowserRouter>
     </div>
