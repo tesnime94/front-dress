@@ -5,12 +5,9 @@ import React, { useState, useEffect } from 'react';
 import { DressModel } from '../../models/dressModel';
 import { useNavigate } from 'react-router-dom';
 
-const Dress = () => {
+const MyDress = () => {
 
     const navigate = useNavigate();
-    const naviguatetoAddDress = (() => {
-        navigate('/addDress')
-    })
 
     const [dresses, setDresses] = useState<DressModel[]>([]);
 
@@ -25,7 +22,8 @@ const Dress = () => {
     }, []);
 
     const fetchDress = (() => {
-        axios.get('http://localhost:8080/robe/all')
+        const userId = localStorage.getItem('userId');
+        axios.get('http://localhost:8080/robe/${userId}')
             .then((res) => {
                 console.log(res);
                 setDresses(res.data)
@@ -37,7 +35,7 @@ const Dress = () => {
 
     return (
         <>
-            <h1>Toutes les robes</h1>
+            <h1>Mes robes</h1>
 
             <div className='row mx-3 ' >
                 {dresses.map((dress) => (
@@ -47,15 +45,14 @@ const Dress = () => {
                             <p>{dress.description}</p>
                             <p>{dress.price}</p>
                             <img src={`data:image/jpeg;base64,${dress.image}`} alt={dress.label} />
-                            <button > Voir détail</button>
+                            <button > Supprimer</button>
                         </div>
                     </div>
 
                 ))}
-                <button onClick={naviguatetoAddDress} > Ajouter une robe</button>
             </div>
         </>
     );
 };
 
-export default Dress;
+export default MyDress;

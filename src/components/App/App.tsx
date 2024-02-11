@@ -8,7 +8,9 @@ import Header from '../header/header'
 import Dress from '../dress/Dress'
 import User from '../user/user'
 import AddDress from '../dress/addDress'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import MyDress from '../dress/myDress'
+
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path='/dress' element={<Dress />} />
           <Route path='/user' element={<User />} />
           <Route path='/addDress' element={<AddDress />} />
+          <Route path='/myDress' element={<MyDress />} />
 
         </Routes>
       </BrowserRouter>

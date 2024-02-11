@@ -48,7 +48,7 @@ const AddDress = () => {
             console.log(key, value);
         }
 
-        axios.post("http://localhost:8080/robe/add", formData) //ici que ça a l'air de beuguer
+        axios.post("http://localhost:8080/robe/add", formData)
             .then((res) => {
                 console.log(res);
                 navigate('/Dress');
