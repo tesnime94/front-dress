@@ -24,6 +24,8 @@ const AddDress = () => {
     };
     //@ts-ignore
     const onFileChange = (e) => {
+        console.log(e.target.files); // Pour voir si le fichier est bien là
+
         setSelectedFile(e.target.files[0]);
     };
 
