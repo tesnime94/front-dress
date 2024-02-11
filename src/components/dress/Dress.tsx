@@ -1,7 +1,6 @@
 
 import axios from 'axios';
 import './Dress.css';
-
 import React, { useState, useEffect } from 'react';
 import { DressModel } from '../../models/dressModel';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +15,13 @@ const Dress = () => {
     const [dresses, setDresses] = useState<DressModel[]>([]);
 
     useEffect(() => {
-        fetchDress();
+        const userId = localStorage.getItem('userId');
+        if (userId !== 'false') {
+            fetchDress();
+        }
+        else {
+            navigate('/Login');
+        }
     }, []);
 
     const fetchDress = (() => {

@@ -13,7 +13,7 @@ const UserPage = () => {
     // Récupérer l'ID de l'utilisateur à partir du localStorage
     const userId = localStorage.getItem("userId")?.toString();
     // Faire une requête à votre backend pour récupérer les informations de l'utilisateur correspondant à cet ID
-    axios.get(`http://localhost:8080/user/${userId}`) // Modifier l'URL de l'API backend selon votre configuration
+    axios.get(`http://localhost:8080/user/${userId}`)
       .then((res) => {
         // Mettre à jour l'état avec les informations de l'utilisateur récupérées depuis le backend
         setUserInfo(res.data);
@@ -28,7 +28,6 @@ const UserPage = () => {
 
   return (
     <div className=''>
-      {/* Afficher les informations de l'utilisateur */}
       <h2>User Information</h2>
       <p><strong>Username :</strong>{userInfo.name}</p>
       <p><strong>Email :</strong> {userInfo.email}</p>
