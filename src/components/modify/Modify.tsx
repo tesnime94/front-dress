@@ -38,7 +38,7 @@ const Modify = () => {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     const userId = localStorage.getItem("userId");
-  
+
     fetch(`http://localhost:8080/user/update/${userId}`, {
       method: 'PUT',
       headers: {
@@ -46,21 +46,21 @@ const Modify = () => {
       },
       body: JSON.stringify(newUserInfo),
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erreur lors de la mise à jour de l\'utilisateur');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Utilisateur mis à jour avec succès', data);
-      navigate('/user');
-    })
-    .catch(error => {
-      console.error('Erreur lors de la mise à jour de l\'utilisateur', error);
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erreur lors de la mise à jour de l\'utilisateur');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Utilisateur mis à jour avec succès', data);
+        navigate('/user');
+      })
+      .catch(error => {
+        console.error('Erreur lors de la mise à jour de l\'utilisateur', error);
+      });
   };
-  
+
 
   return (
     <div className='modify-container'>

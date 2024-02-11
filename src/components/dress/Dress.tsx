@@ -39,7 +39,7 @@ const Dress = () => {
         <>
             <h1>Toutes les robes</h1>
 
-            <div className='row mx-3 ' >
+            <div className='row mx-3  ' >
                 {dresses.map((dress) => (
                     <div className='col-3 my-2  text-center '>
                         <div className='border'>
