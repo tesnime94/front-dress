@@ -37,7 +37,17 @@ const Dress = () => {
 
     return (
         <>
-            <h1>Toutes les robes</h1>
+            <div className="row mx-3">
+                <div className="col">
+                    <h1>Toutes les robes</h1>
+                </div>
+                <div className="col text-end">
+                    <button onClick={naviguatetoAddDress} > Ajouter une robe</button>
+                </div>
+            </div>
+
+
+
 
             <div className='row mx-3  ' >
                 {dresses.map((dress) => (
@@ -46,13 +56,12 @@ const Dress = () => {
                             <p>{dress.label}</p>
                             <p>{dress.description}</p>
                             <p>{dress.price}</p>
-                            <img src={`data:image/jpeg;base64,${dress.image}`} alt={dress.label} />
+                            <img src={`data:image/jpeg;base64,${dress.image}`} width={"200px"} alt={dress.label} />
                             <button > Voir détail</button>
                         </div>
                     </div>
 
                 ))}
-                <button onClick={naviguatetoAddDress} > Ajouter une robe</button>
             </div>
         </>
     );

@@ -10,7 +10,7 @@ const Accueil = () => {
 
     return (
         <>
-            <section className='text'>
+            <section className='text home-page'>
                 <h1> Bienvenue dans Rent Dress !</h1>
                 <p>
                     Un mariage, une soirée, cherchez vous la robe de vos rêves ?
