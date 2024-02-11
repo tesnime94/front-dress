@@ -25,7 +25,6 @@ const AddDress = () => {
     //@ts-ignore
     const onFileChange = (e) => {
         console.log(e.target.files); // Pour voir si le fichier est bien là
-
         setSelectedFile(e.target.files[0]);
     };
 
@@ -33,19 +32,23 @@ const AddDress = () => {
     //@ts-ignore
     const onSubmit = (e) => {
         e.preventDefault();
+        const userId = localStorage.getItem('userId');
         const formData = new FormData();
         formData.append("price", credentials.price);
         formData.append("label", credentials.label);
         formData.append("description", credentials.description);
         formData.append("size", credentials.size);
+        if (userId) {
+            formData.append('userId', userId);
+        }
         if (selectedFile) {
             formData.append("image", selectedFile);
         }
-        axios.post("http://localhost:8080/robe", formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        })
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
+
+        axios.post("http://localhost:8080/robe/add", formData) //ici que ça a l'air de beuguer
             .then((res) => {
                 console.log(res);
                 navigate('/Dress');

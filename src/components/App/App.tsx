@@ -8,7 +8,7 @@ import Header from '../header/header'
 import Dress from '../dress/Dress'
 import User from '../user/user'
 import AddDress from '../dress/addDress'
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
