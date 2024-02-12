@@ -10,6 +10,7 @@ import AddDress from '../dress/addDress'
 import Modify from '../modify/Modify'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Purchase from '../purchase/Purchase'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/user' element={<User />} />
             <Route path='/addDress' element={<AddDress />} />
             <Route path='/Modify' element={<Modify />} />
+            <Route path='/Purchase' element={<Purchase />} />
           </Routes>
         </div>
       </BrowserRouter>
