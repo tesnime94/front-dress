@@ -7,19 +7,20 @@
     height: 100vh;
     background-size: cover;
     z-index: -100;
-    background-color: #dba0b2;
-
+  
 }
 
 
 html, body, #root {
     margin: 0;
     padding: 0;
-    background-color: #dba0b2;
+   
     font-family: Arial, sans-serif; /* Assurez-vous que la police est définie pour tout le document */
     color: #fff; /* Couleur de texte blanche pour une meilleure lisibilité */
 }
-
+section.text.home-page{
+    margin-left: 70px;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -28,9 +29,10 @@ html, body, #root {
 }
 
 .text {
-    background-color: #dba0b2; /* Fond blanc pour la section de texte */
+    
     color: #fff; /* Couleur de texte noire pour une meilleure lisibilité */
-    padding: 20px; /* Ajoutez un peu de marge intérieure pour l'espacement */
+    margin-top: 46px;
+    
 }
 
 

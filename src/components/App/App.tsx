@@ -1,9 +1,8 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from '../login/Login'
 import Accueil from '../home/Accueil'
 import Inscription from '../inscription/Inscription'
-import Header from '../header/header'
 import Dress from '../dress/Dress'
 import User from '../user/user'
 import AddDress from '../dress/addDress'
@@ -11,30 +10,53 @@ import Modify from '../modify/Modify'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Purchase from '../purchase/Purchase'
+import MainLayout from '../../layouts/MainLayout'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout/>,
+    children: [
+      {
+        index: true,
+        element: <Accueil/>
+      },
+      {
+        path: "/inscription",
+        element: <Inscription/>
+      },
+      {
+        path: "/login",
+        element: <Login/>
+      },
+      {
+        path: "/user",
+        element: <User/>
+      },
+      {
+        path: "/purchase",
+        element: <Purchase/>
+      },
+      {
+        path: "/dress",
+        element: <Dress/>
+      },
+      {
+        path: "/addDress",
+        element: <AddDress/>
+      },
+      {
+        path: "/modify",
+        element: <Modify/>
+      },
+
+    ]
+  }
+]);
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-
-        <Header />
-        <div className='container-fluid' >
-          <Routes>
-            <Route path='/login' element={<Login />} />
-            <Route path='/' element={<Accueil />} />
-            <Route path='/inscription' element={<Inscription />} />
-            <Route path='/dress' element={<Dress />} />
-            <Route path='/user' element={<User />} />
-            <Route path='/addDress' element={<AddDress />} />
-            <Route path='/Modify' element={<Modify />} />
-            <Route path='/Purchase' element={<Purchase />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-
-    </>
-
-
+    <RouterProvider router={router}/>
   )
 }
 

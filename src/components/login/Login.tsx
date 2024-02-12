@@ -65,7 +65,7 @@ const Login = () => {
 
                     <div className='groupLogin'>
                         <button>Login </button>
-                        <button onClick={naviguateToInscription}>Inscription </button>
+                        <button onClick={naviguateToInscription} className='ins'>Inscription </button>
                     </div>
                 </form>
             </div>

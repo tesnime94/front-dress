@@ -1,86 +1,67 @@
-header {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    top: 0;
-    background-color: #dba0b2;
-    position: fixed;
-}
 
 nav {
     display: flex;
-    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
     align-items: center;
+    padding-right: 20px;
+    
+    
+}
+
+.logo {
+    width: 250px;
+}
+
+.navlinks {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 2;
+    padding-right: 10px;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+.link a:link, .link a:visited, .link a:hover {
+    color: white;
+   
+    font-size: 23px;
+}
+
+.link a {
+    transition: transform 1s ease-out;
+    
+}
+
+
+
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    font-weight: bold;
+    background-color: white;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 1s ease-in;
+}
+
+.link:hover::after {
     width: 100%;
 }
 
-nav .logo {
-    width: 170px;
 
-}
-
-nav ul {
-    flex: 1;
+.iconlinks {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
-}
-
-nav ul li {
-    list-style: none;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: pink;
-    font-size: 1.2rem;
-    transition: color .3s;
-}
-
-nav ul li a:hover {
-    color: #ca58a1;
-}
-
-
-button:hover{
-    color: #ca58a1;
-    border: #dba0b2;
-}
-
-button:active{
-    color: #ca58a1;
-    border-color: #dba0b2;
-    
-} 
-.boutonHeader {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-family: Arial;
-    font-weight: ;
-    color: #fff;
-    padding: 10px 20px;
-    margin-left: auto;
-    background-color: #dba0b2;
-
-}
-.boutonAccueil li:not(:last-child)::after {
-    content: '|';
-    margin-right: 5px; /* Ajustez la marge droite pour tous les séparateurs sauf l'avant-dernier */
-    color: #fff; /* Ajoutez la couleur pour le séparateur si nécessaire */
-}
-
-.boutonAccueil li:nth-last-child(2)::after {
-    content: none; /* Supprimez le contenu du séparateur avant-dernier */
-}
-.boutonAccueil li:nth-last-child(2),
-.boutonAccueil li:last-child {
-    margin-left: 50px; /* Ajoutez un petit espace entre les deux derniers éléments */
-}
-
-
-
-.boutonAccueil {
-    padding-left: 550px;
+    gap: 20px;
 }
