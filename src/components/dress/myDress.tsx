@@ -23,7 +23,7 @@ const MyDress = () => {
 
     const fetchDress = (() => {
         const userId = localStorage.getItem('userId');
-        axios.get('http://localhost:8080/robe/${userId}')
+        axios.get(`http://localhost:8080/robe/${userId}`)
             .then((res) => {
                 console.log(res);
                 setDresses(res.data)

@@ -5,7 +5,7 @@
     bottom: 0;
     width: 100%;
     height: 100vh;
-    background: url('./../../image/imageFondAccueil.jpeg') center center no-repeat;
+    background: url('C:\Users\slimb\OneDrive\Documents\front_dress\dress_front\src\image\imageFondAccueil.jpeg') center center no-repeat;
     background-size: cover;
     z-index: -100;
 }
