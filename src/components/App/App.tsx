@@ -9,6 +9,7 @@ import Dress from '../dress/Dress'
 import User from '../user/user'
 import AddDress from '../dress/addDress'
 import MyDress from '../dress/myDress'
+import Modify from '../modify/Modify'
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/user' element={<User />} />
           <Route path='/addDress' element={<AddDress />} />
           <Route path='/myDress' element={<MyDress />} />
+          <Route path='/modify' element={<Modify />} />
 
         </Routes>
       </BrowserRouter>
