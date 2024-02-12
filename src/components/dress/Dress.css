@@ -1,3 +1,22 @@
 div.col h1 {
     color: pink;
 }
+.row mx-3{
+
+}
+.form_connexionr {
+    color: #fff;
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 500px;
+    
+    background-color: #c1958e6e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: -64px;
+    margin-left: 530px;
+    
+}

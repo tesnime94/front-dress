@@ -1,24 +1,33 @@
 .form-register {
-    margin-left: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-
-    width: 360px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 400px;
-}
-
+   
+        color: #fff;
+        margin-left: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 50%;
+        
+        background-color: #c1958e6e;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: -70px;
+        margin-left: 400px;
+        max-height: 550px; /* Hauteur maximale du conteneur du formulaire */
+        overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur maximale */
+    }
+    ::-webkit-scrollbar {
+        width: 12px; /* Largeur de la barre de défilement */
+    }
+    
 .group {
     margin-bottom: 15px;
 }
 
 label {
     display: block;
-    font-size: 14px;
-    color: #888;
+    font-size: 16px;
+    color: #fff;
     margin-bottom: 5px;
 }
 

@@ -60,7 +60,7 @@ const AddDress = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <div className='form_connexion'>
+            <div className='form_connexionr'>
                 <div className='groupLogin'>
                     <label htmlFor='label'>Nom</label>
                     <input type='text' name='label' value={credentials.label} onChange={onChange} />
