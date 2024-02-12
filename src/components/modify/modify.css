@@ -32,7 +32,7 @@
   }
   
   .submit-button,
-  .cancel-button {
+  .cancel-button, .delete-button {
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
@@ -50,6 +50,14 @@
   
   .submit-button:hover {
     background-color: #ff4f9e;
+  }
+  .delete-button {
+    background-color: #ca58a1;
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    background-color: #ca58a1;
   }
   
   .cancel-button {

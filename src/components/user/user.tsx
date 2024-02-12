@@ -37,7 +37,7 @@ const UserPage = () => {
 
   if (!userInfo.name || !userInfo.email) {
     // Afficher un message de chargement tant que les données de l'utilisateur ne sont pas disponibles
-    return <div>Loading...</div>;
+    return <div>Loading... Aucune informations disponibles, veuillez vérifier d'être connecté</div>;
   }
 
 
