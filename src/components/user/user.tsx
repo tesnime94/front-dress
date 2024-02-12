@@ -40,6 +40,18 @@ const UserPage = () => {
     return <div>Loading...</div>;
   }
 
+  // @ts-ignore
+  const handleDelete = (dressId) => {
+    console.log(dressId); // Vérifiez que l'ID est bien reçu
+    axios.delete(`http://localhost:8080/robe/delete/${dressId}`)
+      .then(() => {
+        // Mise à jour de l'affichage après la suppression
+        setDresses(dresses.filter(dress => dress.id !== dressId));
+      })
+      .catch((error) => console.log(error));
+  };
+
+
 
   return (
     <>
@@ -85,7 +97,7 @@ const UserPage = () => {
               <p>{dress.description}</p>
               <p>{dress.price}</p>
               <img src={`data:image/jpeg;base64,${dress.image}`} width={"200px"} alt={dress.label} />
-              <button> Voir détail</button>
+              <button onClick={() => handleDelete(dress.id)}>Supprimer robe</button>
             </div>
           </div>
 

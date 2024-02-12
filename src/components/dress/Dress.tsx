@@ -41,7 +41,7 @@ const Dress = () => {
                 <div className="col">
                     <h1>Toutes les robes</h1>
                 </div>
-                <div className="col text-end">
+                <div className="col text-end ">
                     <button onClick={naviguatetoAddDress} > Ajouter une robe</button>
                 </div>
             </div>
@@ -53,11 +53,11 @@ const Dress = () => {
                 {dresses.map((dress) => (
                     <div className='col-3 my-2  text-center '>
                         <div className='border'>
-                            <p>{dress.label}</p>
-                            <p>{dress.description}</p>
-                            <p>{dress.price}</p>
+                            <p>Nom : {dress.label}</p>
+                            <p>Description : {dress.description}</p>
+                            <p>Prix: {dress.price}</p>
                             <img src={`data:image/jpeg;base64,${dress.image}`} width={"200px"} alt={dress.label} />
-                            <button > Voir détail</button>
+                            <button > Ajouter panier</button>
                         </div>
                     </div>
 
