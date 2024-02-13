@@ -27,7 +27,7 @@
 label {
     display: block;
     font-size: 16px;
-    color: #fff;
+    color: #pink;
     margin-bottom: 5px;
 }
 
@@ -37,4 +37,7 @@ input {
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+cancel-button{
+
 }

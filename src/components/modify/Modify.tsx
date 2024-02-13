@@ -76,8 +76,9 @@ const Modify = () => {
   };
 
   return (
+    
     <div className='modify-container'>
-      <h2>Modify User Information</h2>
+      <h2 className='usermod'>Modify User Information</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Username:</label>
