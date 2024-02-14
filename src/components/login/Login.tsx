@@ -60,7 +60,7 @@ const Login = () => {
 
                     <div className='groupLogin'>
                         <label htmlFor='password'>Password</label>
-                        <input type='text' name='password' value={credentials.password} onChange={onChange} />
+                        <input type='password' name='password' value={credentials.password} onChange={onChange} />
                     </div>
 
                     <div className='groupLogin'>

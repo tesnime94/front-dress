@@ -1,93 +1,67 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Importer axios pour effectuer des requêtes HTTP
-import './user.css';
+import axios from 'axios';
+import './user.css'; // Assurez-vous que le chemin d'accès est correct
 import { DressModel } from '../../models/dressModel';
 
 const UserPage = () => {
   const navigate = useNavigate();
   const [dresses, setDresses] = useState<DressModel[]>([]);
-
-  // État pour stocker les informations de l'utilisateur
   const [userInfo, setUserInfo] = useState({ name: '', email: '', address: '', phoneNumber: '', password: '' });
+
   const fetchDress = (() => {
     const userId = localStorage.getItem('userId');
     axios.get(`http://localhost:8080/robe/${userId}`)
       .then((res) => {
-        console.log(res);
-        setDresses(res.data)
-
+        setDresses(res.data);
       })
       .catch((error) => console.log(error));
-  })
+  });
+
   useEffect(() => {
-    // Récupérer l'ID de l'utilisateur à partir du localStorage
     const userId = localStorage.getItem("userId")?.toString();
-    // Faire une requête à votre backend pour récupérer les informations de l'utilisateur correspondant à cet ID
     axios.get(`http://localhost:8080/user/${userId}`)
       .then((res) => {
-        // Mettre à jour l'état avec les informations de l'utilisateur récupérées depuis le backend
         setUserInfo(res.data);
       })
       .catch((error) => console.log(error));
 
     fetchDress();
-
   }, []);
 
-  if (!userInfo.name || !userInfo.email) {
-    // Afficher un message de chargement tant que les données de l'utilisateur ne sont pas disponibles
-    return <div>Loading... Aucune informations disponibles, veuillez vérifier d'être connecté</div>;
-  }
-
-  // @ts-ignore
   const handleDelete = (dressId) => {
-    console.log(dressId); // Vérifiez que l'ID est bien reçu
     axios.delete(`http://localhost:8080/robe/delete/${dressId}`)
       .then(() => {
-        // Mise à jour de l'affichage après la suppression
         setDresses(dresses.filter(dress => dress.id !== dressId));
       })
       .catch((error) => console.log(error));
   };
 
+  if (!userInfo.name || !userInfo.email) {
+    return <div>Loading... Aucune informations disponibles, veuillez vérifier d'être connecté</div>;
+  }
+
   return (
     <div className="d-flex">
-      <div className='row'>
-        <div className="col-12">
-          <h2>User Information</h2>
-        </div>
-        <div className="col-12 my-custom-margin">
-          <p><strong>Username :</strong>{userInfo.name}</p>
-        </div>
-        <div className="col-12 my-custom-margin">
-          <p><strong>Email :</strong> {userInfo.email}</p>
-        </div>
-        <div className="col-12 my-custom-margin">
-          <p><strong>adresse :</strong>{userInfo.address}</p>
-        </div>
-        <div className="col-12 my-custom-margin">
-          <p><strong>Phone Number :</strong> {userInfo.phoneNumber}</p>
-        </div>
-        <div className="col-12 my-custom-margin">
-          <p><strong> Password :</strong> {userInfo.password}</p>
-        </div>
-        {/* Bouton pour rediriger vers la page de modification */}
-        <div className="col-12 my-custom-margin">
-          <Link to="/modify" className="btn btn-primary">Modifier</Link>
-        </div>
-        <div className="col-12">
-          <h2> Mes robes </h2>
-        </div>
+      <div className="user-info">
+        {/* Informations utilisateur ici */}
+        <h2>User Information</h2>
+        <p><strong>Username : </strong>{userInfo.name}</p>
+        <p><strong>Email : </strong> {userInfo.email}</p>
+        <p><strong>Address : </strong>{userInfo.address}</p>
+        <p><strong>Phone Number : </strong> {userInfo.phoneNumber}</p>
+        <p><strong> Password : </strong> {userInfo.password}</p>
+        <Link to="/modify" className="btn btn-modify">Modifier</Link>
       </div>
-      <div className='row mx-3'>
+      <div className="dresses-list">
+        <h2>Mes robes : </h2>
         {dresses.map((dress) => (
-          <div className='col-3 my-2 text-center' key={dress.id}>
+          <div className='dress-card text-center' key={dress.id}>
             <div className='border'>
               <p>{dress.label}</p>
               <p>{dress.description}</p>
               <p>{dress.price}</p>
-              <img src={`data:image/jpeg;base64,${dress.image}`} width={"200px"} alt={dress.label} />
+              <img src={`data:image/jpeg;base64,${dress.image}`} alt={dress.label} />
               <button onClick={() => handleDelete(dress.id)} className="btn btn-danger">Supprimer robe</button>
             </div>
           </div>

@@ -1,22 +1,23 @@
-
- h2 {
+h2 {
     color: pink;
     font-size: 75px;
     line-height: 2;
-    
+
 }
 
- p{
+p {
     color: black;
     font-size: 20px;
     line-height: 2;
     margin-bottom: 1rem;
 }
-strong{
+
+strong {
     color: pink;
 
     font-weight: bold;
 }
+
 .modify-button {
     display: inline-block;
     text-decoration: none;
@@ -27,9 +28,59 @@ strong{
     margin-right: 30px;
     border-radius: 10%;
 }
-#root {
+
+.btn-modify {
+    background-color: pink !important;
+    border-color: pink !important;
+    color: white !important;
 }
+
+.btn-modify:hover {
+    background-color: #ff69b4 !important;
+    border-color: #ff69b4 !important;
+}
+
+.user-info p,
+.user-info h2 {
+    color: white;
+}
+
+
+#root {}
+
 .my-custom-margin {
-    margin-bottom: 10px; /* Ajustez la marge inférieure selon vos besoins */
-  }
-  
+    margin-bottom: 10px;
+}
+
+/*changement à partie d ici */
+.d-flex {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.user-info {
+    margin-right: 38px;
+    margin-left: 20px;
+}
+
+.dresses-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+.dress-card {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.dress-card img {
+    height: auto;
+    border-radius: 5px;
+}

@@ -7,32 +7,42 @@
     height: 100vh;
     background-size: cover;
     z-index: -100;
-  
+
+
+
 }
 
 
-html, body, #root {
+html,
+body,
+#root {
     margin: 0;
     padding: 0;
-   
-    font-family: Arial, sans-serif; /* Assurez-vous que la police est définie pour tout le document */
-    color: #fff; /* Couleur de texte blanche pour une meilleure lisibilité */
+
+    font-family: Arial, sans-serif;
+    /* Assurez-vous que la police est définie pour tout le document */
+    color: #fff;
+    /* Couleur de texte blanche pour une meilleure lisibilité */
 }
-section.text.home-page{
+
+section.text.home-page {
     margin-left: 70px;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ajustez la hauteur selon vos besoins */
+    height: 100vh;
+    /* Ajustez la hauteur selon vos besoins */
 }
 
 .text {
-    
-    color: #fff; /* Couleur de texte noire pour une meilleure lisibilité */
+
+    color: #fff;
+    /* Couleur de texte noire pour une meilleure lisibilité */
     margin-top: 46px;
-    
+
 }
 
 
@@ -66,4 +76,3 @@ section.text.home-page{
     background-color: pink;
     font-weight: 600;
 }
-

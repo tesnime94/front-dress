@@ -31,9 +31,7 @@ const Purchase = () => {
     // @ts-ignore
     const handleDeletePurchase = async (purchaseId) => {
         try {
-            // Remplacez l'URL par l'endpoint approprié de votre API
             await axios.delete(`http://localhost:8080/purchase/delete/${purchaseId}`);
-            // Filtrez les achats pour enlever celui qui vient d'être supprimé
             setPurchases(purchases.filter(purchase => purchase.id !== purchaseId));
         } catch (error) {
             console.error('Erreur lors de la suppression de l\'achat:', error);
