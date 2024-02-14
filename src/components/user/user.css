@@ -28,5 +28,8 @@ strong{
     border-radius: 10%;
 }
 #root {
-    height: 100vh !important;
 }
+.my-custom-margin {
+    margin-bottom: 10px; /* Ajustez la marge inférieure selon vos besoins */
+  }
+  

@@ -7,6 +7,7 @@ const MainLayout = () => {
         <div className="full-height">
             <Header />
             <Outlet/>
+            
         </div>
      );
 }

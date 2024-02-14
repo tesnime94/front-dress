@@ -51,59 +51,49 @@ const UserPage = () => {
       .catch((error) => console.log(error));
   };
 
-
-
   return (
-    <>
+    <div className="d-flex">
       <div className='row'>
         <div className="col-12">
           <h2>User Information</h2>
         </div>
-        <div className="col-12">
+        <div className="col-12 my-custom-margin">
           <p><strong>Username :</strong>{userInfo.name}</p>
         </div>
-        <div className="col-12">
-
-
+        <div className="col-12 my-custom-margin">
           <p><strong>Email :</strong> {userInfo.email}</p>
         </div>
-        <div className="col-12">
-
+        <div className="col-12 my-custom-margin">
           <p><strong>adresse :</strong>{userInfo.address}</p>
         </div>
-        <div className="col-12">
-
+        <div className="col-12 my-custom-margin">
           <p><strong>Phone Number :</strong> {userInfo.phoneNumber}</p>
         </div>
-        <div className="col-12">
-
+        <div className="col-12 my-custom-margin">
           <p><strong> Password :</strong> {userInfo.password}</p>
         </div>
         {/* Bouton pour rediriger vers la page de modification */}
-        <div className="col-12">
-
-          <Link to="/modify" className="modify-button">Modifier</Link>
+        <div className="col-12 my-custom-margin">
+          <Link to="/modify" className="btn btn-primary">Modifier</Link>
         </div>
         <div className="col-12">
-
           <h2> Mes robes </h2>
         </div>
       </div>
-      <div className='row mx-3  '>
+      <div className='row mx-3'>
         {dresses.map((dress) => (
-          <div className='col-3 my-2  text-center '>
+          <div className='col-3 my-2 text-center' key={dress.id}>
             <div className='border'>
               <p>{dress.label}</p>
               <p>{dress.description}</p>
               <p>{dress.price}</p>
               <img src={`data:image/jpeg;base64,${dress.image}`} width={"200px"} alt={dress.label} />
-              <button onClick={() => handleDelete(dress.id)}>Supprimer robe</button>
+              <button onClick={() => handleDelete(dress.id)} className="btn btn-danger">Supprimer robe</button>
             </div>
           </div>
-
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

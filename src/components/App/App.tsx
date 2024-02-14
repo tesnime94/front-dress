@@ -7,7 +7,6 @@ import Dress from '../dress/Dress'
 import User from '../user/user'
 import AddDress from '../dress/addDress'
 import Modify from '../modify/Modify'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Purchase from '../purchase/Purchase'
 import MainLayout from '../../layouts/MainLayout'
