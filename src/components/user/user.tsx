@@ -45,7 +45,7 @@ const UserPage = () => {
     <div className="d-flex">
       <div className="user-info">
         {/* Informations utilisateur ici */}
-        <h2>User Information</h2>
+        <h2 style={{ color:'salmon' }}>User Information</h2>
         <p><strong>Username : </strong>{userInfo.name}</p>
         <p><strong>Email : </strong> {userInfo.email}</p>
         <p><strong>Address : </strong>{userInfo.address}</p>
@@ -53,16 +53,17 @@ const UserPage = () => {
         <p><strong> Password : </strong> {userInfo.password}</p>
         <Link to="/modify" className="btn btn-modify">Modifier</Link>
       </div>
-      <div className="dresses-list">
-        <h2>Mes robes : </h2>
+      <h2 style={{ color:'salmon' }}>Mes robes : </h2>
+      <div className="dresses-list"  style={{ maxHeight: '500px', maxWidth: '800px', overflowY: 'auto' }}>
+       
         {dresses.map((dress) => (
           <div className='dress-card text-center' key={dress.id}>
             <div className='border'>
               <p>{dress.label}</p>
               <p>{dress.description}</p>
               <p>{dress.price}</p>
-              <img src={`data:image/jpeg;base64,${dress.image}`} alt={dress.label} />
-              <button onClick={() => handleDelete(dress.id)} className="btn btn-danger">Supprimer robe</button>
+              <img src={`data:image/jpeg;base64,${dress.image}`} width={"100px"} height={"200px"} alt={dress.label} />
+              <button onClick={() => handleDelete(dress.id)} className="btn btn-danger" style={{ marginTop: '15px' }}>Supprimer robe</button>
             </div>
           </div>
         ))}
