@@ -1,46 +1,38 @@
 div.col h3 {
-    color: #fff;
-    font-family: Arial, sans-serif; 
-    margin-left: 50px;
-  
-    
-
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin-left: 50px;
 }
-.groupLogin label{
-    color:#fff;
+.groupLogin label {
+  color: #fff;
 }
 
 .form_connexionr {
-    color: #fff;
-    margin-left: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 500px;
-    
-    background-color: #c1958e6e;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: -64px;
-    margin-left: 530px;
-    
+  color: #fff;
+  margin-left: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 500px;
+
+  background-color: #c1958e6e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: -64px;
+  margin-left: 530px;
 }
 .col {
-    gap: 5px;
-    align-items: center;
-    
+  gap: 5px;
+  align-items: center;
 }
 
-.border{
-    overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur maximale */
-    background-color: #c1958e6e;
-    border: 0px regular transparent;
-    border-color: #c1958e6e;
-    overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur maximale */
+.border {
+  overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur maximale */
+  background-color: #c1958e6e;
+  border: 0px regular transparent;
+  border-color: #c1958e6e;
+  overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur maximale */
 
-    border-radius: 10px;
-    
-}
-.border button{
+  border-radius: 10px;
 }
